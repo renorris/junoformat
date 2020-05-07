@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JunoFormat</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/junoformat/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/junoformat/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/junoformat/favicon-16x16.png">
+    <link rel="manifest" href="/junoformat/site.webmanifest">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body class="mt-3 container">
+
+<div class="jumbotron pb-2">
+    <h1 class="display-5">JunoFormat<span class="ml-2 font-weight-lighter" style="font-size: 14px">Beta 1.1</span></h1>
+    <p class="lead">Fixes formatting issues when copying text from Google Docs to Juno Docs.</p>
+    <hr class="my-4">
+    <div class="modal" id="aboutModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">About</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>This tool formats text from Google Docs so Juno Docs can display it properly. <a href="/junoformat/changelog.txt">Changelog</a></p>
+                    Implemented Features:
+                    <ul>
+                        <li>Fixes bold, italic, and underlined text</li>
+                        <li>Inserts line breaks when needed</li>
+                        <li>Applies appropriate line indentations</li>
+                        <li>Formats bullet points, lettering, numbering, and indentations on ordered and unordered lists</li>
+                    </ul>
+                    Planned Features:
+                    <ul>
+                        <li>Hyperlinks</li>
+                        <li>Images (Currently you must manually insert images from within the Juno editor)</li>
+                    </ul>
+                    <b>Please note:</b>
+                    <ul>
+                        <li>This project is incomplete and can be unreliable.</li>
+                        <li>If you're using this for something important, please double-check that all your text has pasted properly in Juno.</li>
+                        <li>Everything you input into this site stays on your computer and isn't sent anywhere on the internet. This includes the text you paste.</li>
+                    </ul>
+                    <p>If you receive errors when attempting to use the tool: Refresh this page, re-copy your Google Docs text, then paste it again here. If that doesn't help, feel free to email the address marked below with your issue.</p>
+                    <p>For any questions/suggestions please email junoformat@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="whatsNewModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">What's New</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p><b>Version 1.1</b> introduces proper formatting for bulleted and numbered lists.</p>
+                    What's included:
+                    <ul>
+                        <li>List indentation</li>
+                        <li>Multiple bullet icon types</li>
+                        <li>Alphabetical lists - E.g.<br>a. Lorem ipsum dolor sit amet<br>b. Consectetur adipiscing elit</li>
+                        <li>Roman numeral lists - E.g.<br>i. Ed do eiusmod tempor<br>ii. Incididunt ut labore</li>
+                        <li>A slightly redesigned front page</li>
+                    </ul>
+                    </b>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#aboutModal">
+        About
+    </button>
+    <button type="button" class="btn btn-outline-info ml-2" data-toggle="modal" data-target="#whatsNewModal">
+        What's New
+    </button>
+    <p class="mt-3 font-weight-light" style="font-size: 12px;">Created by Reese Norris, 2020</p>
+</div>
+
+<div id="dump" contenteditable="false" class="border border-dark p-1">Copy your text from Google Docs then paste anywhere on this page.</div>
+
+</body>
+
+<script src="junoformat.js"></script>
+</html>
+

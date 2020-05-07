@@ -1,0 +1,24 @@
+Changelog
+
+v1.1
+Add major ordered/unordered list features
+    Proper indentation
+    Proper bullet icons, decimal, alpha-lower/alpha-upper, roman-lower/roman-upper
+Minor UI redesign
+    Replaced dropdowns with modals
+    Changed button styling
+    Added "What's New" page
+
+v1.0.4
+Moved UI stuff around
+Added some UI stuff
+
+v1.0.3
+Removed console spam for production
+
+v1.0.1
+Add HTML title
+Add favicon
+
+v1.0
+Initial release
