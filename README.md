@@ -1,11 +1,11 @@
 # JunoFormat
 
-Fixes formatting issues when copying text from Google Docs to Juno Docs.
+Fixes some formatting issues when pasting Google Docs into Juno Docs.
 
 ## About
-* I was prompted to make this because [Juno Docs](https://login.jupitered.com/help/?junodocs) is too crappy to support pasting rich text from Google Docs. 
-* This will parse rich text (HTML/CSS) from Google Docs via the clipboard and reduce the formatting to old HTML tags (no CSS) that Juno knows how to read.
-* Production server: https://reesed.ga/junoformat
+* Reason I made this: [Juno Docs](https://login.jupitered.com/help/?junodocs) is garbage. 
+* This will parse HTML/CSS from Google Docs and reduce the formatting to old HTML tags that Juno Docs knows how to read.
+* Demo server: https://reesed.ga/junoformat
 
 ## Disclaimer
-* This isn't complete and is guaranteed to have issues. [Leave a bug report!](https://github.com/renorris/junoformat/issues)
+* This isn't complete and has issues. [Leave a bug report!](https://github.com/renorris/junoformat/issues)
