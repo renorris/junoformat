@@ -1,28 +1,36 @@
-// JUNOFORMAT.JS
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//                    Version 2, December 2004
+//
+// Copyright (C) 2004 Sam Hocevar <sam@hocevar.net>
+//
+// Everyone is permitted to copy and distribute verbatim or modified
+// copies of this license document, and changing it is allowed as long
+// as the name is changed.
+//
+//            DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+//   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+//
+//  0. You just DO WHAT THE FUCK YOU WANT TO.
+
+// junoformat.js
 // Reese Norris 2020
 
-// Define important global variables
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 var finalResult = "";
 var indentRef = 0;
 
-// Listens for pastes and starts parser
 document.addEventListener('paste', function(e) {
     e.preventDefault();
     finalResult = "";
     var pastedText = '';
-
+    
     clipdata = e.clipboardData || window.clipboardData;
     pastedText = clipdata.getData('text/html');
-
-    document.getElementById('dump').innerHTML = pastedText; // consider removing this for production
-
-    // Start parsing
+    
     fixHtml(pastedText);
     copyToClip(finalResult);
     document.getElementById('dump').innerHTML = "All fixed and re-copied! Now go paste into Juno Docs.";
     console.log(finalResult);
-    //setTimeout(() => {  document.getElementById('dump').innerHTML = "Copy your text from Google Docs then paste anywhere on this page."; }, 5000);
 });
 
 document.addEventListener('copy', copyToClip());
@@ -38,7 +46,6 @@ function copyToClip(str) {
     document.removeEventListener("copy", listener);
 }
 
-// Beginning function spools up parser
 function fixHtml(str) {
     console.log(`Raw str: ${str}`);
     var domparser = new DOMParser();
@@ -47,7 +54,6 @@ function fixHtml(str) {
     parseLoop(fullDoc.getElementsByTagName("B")[0].childNodes);
 }
 
-// Main parse loop, recursively calls itself and truncates through each node given from the paste dump
 function parseLoop(nodes, listIndex) {
     console.log(`Parsing new nodelist with length ${nodes.length}`);
     for (let thisNode of nodes) {
@@ -106,7 +112,6 @@ function parseLoop(nodes, listIndex) {
     }
 }
 
-// Accepts SPAN node object and parses text
 function parseSpan(spanItem) {
     var isThisBold = false;
     var isThisItalic = false;
@@ -138,7 +143,6 @@ function parseSpan(spanItem) {
     }
 }
 
-// Inserts the correct amount of indents according to the existing indentRef value
 function insertIndentRef() {
     var loopRef = 0;
     while (loopRef < indentRef) {
@@ -148,7 +152,6 @@ function insertIndentRef() {
     }
 }
 
-// Inserts the correct character/number to put in front of unordered and ordered lists
 function insertListCharacter(node, listIndex) {
     console.log(`Inserting list character: ${node.style.listStyleType}`);
     var listCharacter = (function(listStyleType) {
