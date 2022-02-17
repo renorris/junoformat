@@ -1,12 +1,12 @@
 # JunoFormat
 
-Fixes some formatting issues when transferring text from Google Docs to Juno Docs.
+Convert Google Docs text formatting to Juno Docs spec for assignment submission
 
 ## About
-* Reason I made this: [Juno Docs](https://login.jupitered.com/help/?junodocs) is garbage. 
-* Parse HTML/CSS from Google Docs
-* Reduce the formatting to pure HTML tags
+* [Juno Docs](https://login.jupitered.com/help/?junodocs) is garbage.
+* Input and process Google Docs document from the clipboard
+* Convert CSS styling to pure HTML tags
 * Demo site: https://reese.lv/junoformat
 
-## Disclaimer
-* This isn't complete and has issues. [Leave a bug report!](https://github.com/renorris/junoformat/issues)
+## The Fun Stuff
+* This isn't complete and has issues. [Issues](https://github.com/renorris/junoformat/issues)
