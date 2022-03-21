@@ -1,11 +1,11 @@
 # JunoFormat
 
-Convert Google Docs text formatting to Juno Docs spec for assignment submission
+Scrape and convert Google Docs rich text
 
 ## About
 * [Juno Docs](https://login.jupitered.com/help/?junodocs) is garbage.
-* Input and process Google Docs document from the clipboard
-* Convert CSS styling to pure HTML tags
+* Scrape and process Google Docs document from the clipboard
+* Convert CSS styling to HTML-only tags
 * Demo site: https://reese.lv/junoformat
 
 ## The Fun Stuff
